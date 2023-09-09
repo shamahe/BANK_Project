@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 >
+Form submitted Successfully
+</h2>
+<a href="/">Home</a><br>
+<a href="{% url 'accountapp:logout' %}"><br>
+        <button style="color:blue;" class="GFG">
+            Logout
+{% endblock %}

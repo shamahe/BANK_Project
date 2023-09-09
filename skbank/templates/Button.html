@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <p>
+    <p> Please share some basic information with us by filling the user form</p>
+    <a href="{% url 'accountapp:person_add' %}">
+        <button style="color:red;" class="GFG">
+            User Form
+
+        </button>
+    </a>
+        </p>
+</div>
+
+
+{% endblock %}

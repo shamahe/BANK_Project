@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h3 style="text-align:center;color:black">Registration form</h3>
+
+<form action="{% url 'skbankapp:register' %}" method="post" style="text-align:center;">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter the user name"><br>
+    <input type="text" name="first_name" placeholder="Enter the first name"><br>
+    <input type="text" name="last_name" placeholder="Enter the last name"><br>
+    <input type="password" name="password" placeholder="Enter the password"><br>
+    <input type="password" name="password1" placeholder="confirm your password"><br><br>
+    <input type="submit" style="color:blue;background-color:ash">
+
+</form>
+
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+
+
+{% endblock %}

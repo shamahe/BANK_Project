@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form  method="post" id="personForm" data-branches-url="{% url 'accountapp:ajax_load_branches' %} novalidate>
+  {% csrf_token %}
+    {% if submitted %}
+    <p class="success">
+      Your venue was submitted successfully. Thank you.
+    </p>
+    {% else %}
+
+    <table>
+    {{ form.as_p}}
+     <tr>
+       <td>&nbsp;</td>
+      <td><input type="submit" value="Submit"></td>
+     </tr>
+    </form>
+    </table>
+<!--   {% csrf_token %}-->
+<!--22   </form>-->
+<!--23 {% endif %}-->
+
+
+<!--{% for msg in messages %}-->
+<!--<h2>{{msg}}</h2>-->
+<!--{% endfor %}-->
+
+<script>
+        $("#id_district").change(function () {
+        var url = $("#personForm").attr("data-branches-url");
+        var districtId = $(this).val();
+
+        $.ajax({
+         url: url,
+        data: {
+          'district': districtId
+        },
+        success: function (data) {
+          $("#id_branch").html(data);
+        }
+        });
+        });
+</script>
+</div>
+{% endblock %}

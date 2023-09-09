@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container"><br>
+    <div class="row">
+        <div class="text-right">
+            <br>
+            <h1 class="text-right my_title">
+                <strong>Welcome To<br> SKBANK</strong>
+            </h1>
+            <br>
+            <p class="text-center">
+            <p class="m-b-40">SKBANK is an Indian banking and financial services company headquartered in Mumbai. It is
+                India's largest private sector bank by assets and world's fourth largest bank by market capitalisation
+                as of July 2023, following its takeover of our parent company . It is the second largest company by
+                market capitalisation of $172 billion on the Indian stock exchanges. It is also the sixteenth largest
+                employer in India with nearly 1.78 lakh employees.
+            </p>
+            <div>
+                <a href="{% url 'skbankapp:login' %}">
+                    <button style="color:red;" class="GFG">
+                        Click here to Login
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
